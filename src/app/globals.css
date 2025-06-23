@@ -24,3 +24,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.bg-clay { background: #DEAA79 !important; }
+.text-clay { color: #DEAA79 !important; }
+.bg-cream { background: #FFE6A9 !important; }
+.text-cream { color: #FFE6A9 !important; }
+.bg-sage { background: #B1C29E !important; }
+.text-sage { color: #B1C29E !important; }
+.bg-teal { background: #659287 !important; }
+.text-teal { color: #659287 !important; }
