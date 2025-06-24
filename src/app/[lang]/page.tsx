@@ -4,7 +4,11 @@ import GalleryManager from '@/components/GalleryManager';
 import ProjectsManager from '@/components/ProjectsManager';
 import AboutManager from '@/components/AboutManager';
 
-export default function HomePage({ params }: { params: { lang: string } }) {
+type Params = Promise<{lang : string}>
+
+export default async function HomePage(props: { params: Params }) {
+
+  const params = await props.params;
   const t = getTranslations(params.lang);
 
   return (
