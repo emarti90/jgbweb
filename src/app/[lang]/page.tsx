@@ -4,9 +4,7 @@ import GalleryManager from '@/components/GalleryManager';
 import ProjectsManager from '@/components/ProjectsManager';
 import AboutManager from '@/components/AboutManager';
 
-type Props = { params: { lang: string } };
-
-export default function HomePage({ params }: Props) {
+export default function HomePage({ params }: { params: { lang: string } }) {
   const t = getTranslations(params.lang);
 
   return (
