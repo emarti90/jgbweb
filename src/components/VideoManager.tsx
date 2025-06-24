@@ -1,4 +1,3 @@
-// src/components/VideoBook.tsx
 import { getVideobook } from "@/lib/getVideobook"
 import VideoBook from "./VideoBook"
 
