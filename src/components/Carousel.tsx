@@ -1,6 +1,7 @@
 'use client';
 
 import React from "react";
+import Image from "next/image";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -45,9 +46,11 @@ export default function VideoCarousel() {
           rel="noopener noreferrer"
           className="keen-slider__slide flex flex-col items-center justify-center cursor-pointer group"
         >
-          <img
+          <Image
             src={video.image}
             alt={video.title}
+            width={460}
+            height={460}
             className="object-cover w-full aspect-video transition-transform duration-200 group-hover:scale-105"
           />
           <span className="text-cream font-playfair text-lg p-2 bg-black/60 w-full text-center">
