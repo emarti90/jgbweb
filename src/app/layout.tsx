@@ -5,8 +5,6 @@ import Header from '@/components/Header'
 
 // Importa Google Fonts (Next.js 13+)
 import { Raleway, Playfair_Display } from 'next/font/google'
-import VideoBook from '@/components/VideoBook';
-
 
 const raleway = Raleway({
   weight: ['200', '400'],
