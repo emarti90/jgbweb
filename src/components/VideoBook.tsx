@@ -1,99 +1,65 @@
-'use client';
+"use client"
 
-import * as React from 'react';
-import { useState } from "react";
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import Image from 'next/image';
+type Video = {
+  _id: string
+  title: string
+  vimeoUrl: string
+  main?: boolean
+}
 
-const VIDEOS = [
-  {
-    title: "Escena principal",
-    vimeo: "https://player.vimeo.com/video/924787898?autoplay=1&muted=1",
-    thumb: "placeholder.svg",
-    main: true,
-  },
-  {
-    title: "Ayuda",
-    vimeo: "https://player.vimeo.com/video/918425142",
-    thumb: "placeholder.svg",
-    main: false,
-  },
-  {
-    title: "Falanges",
-    vimeo: "https://player.vimeo.com/video/889559950",
-    thumb: "placeholder.svg",
-    main: false,
-  },
-  {
-    title: "Dimelo",
-    vimeo: "https://player.vimeo.com/video/776328998",
-    thumb: "placeholder.svg",
-    main: false,
-  },
-];
+function extractVimeoId(url: string): string | null {
+  const match = url.match(/vimeo\.com\/(\d+)/)
+  return match ? match[1] : null
+}
 
-export default function VideoBook() {
-  const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(VIDEOS[0]);
+export default function VideoBook({ videos }: { videos: Video[] }) {
+  if (!videos.length) return <div>No hay vídeos disponibles.</div>
 
-  // El principal siempre es el primero del array, por claridad:
-  const main = VIDEOS.find(v => v.main) || VIDEOS[0];
-  const others = VIDEOS.filter(v => !v.main);
+  const mainVideo = videos.find((v) => v.main) || videos[0]
+  const otherVideos = videos.filter((v) => v._id !== mainVideo._id)
 
   return (
-    <section className="flex flex-col items-center gap-4">
-      {/* Video principal */}
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <button
-            className="relative w-full max-w-2xl aspect-video rounded-xl overflow-hidden shadow group"
-            onClick={() => setSelected(main)}
-          >
-            <iframe
-              src={main.vimeo}
-              allow="autoplay; fullscreen"
-              className="w-full h-full"
-              title={main.title}
-            />
-            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition"></div>
-          </button>
-        </DialogTrigger>
-        <DialogContent className="max-w-3xl p-0 bg-black">
+    <section>
+       {/* Video principal grande */}
+      <div className="mb-8 w-full">
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
           <iframe
-            src={selected.vimeo}
-            allow="autoplay; fullscreen"
-            className="w-full aspect-video rounded-t"
-            title={selected.title}
-            autoFocus
+            src={`https://player.vimeo.com/video/${extractVimeoId(mainVideo.vimeoUrl)}?title=0&byline=0&portrait=0`}
+            width="100%"
+            height="100%"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+            title={mainVideo.title}
+            loading="lazy"
           />
-        </DialogContent>
-      </Dialog>
+        </div>
+        <h3 className="font-raleway text-lg p-3">{mainVideo.title}</h3>
+      </div>
 
-      {/* Thumbnails inferiores */}
-      <div className="flex gap-4 w-full max-w-2xl justify-center">
-        {others.map((v) => (
-          <Dialog key={v.vimeo} open={open && selected.vimeo === v.vimeo} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-              <button
-                className="w-36 aspect-video rounded shadow overflow-hidden group relative"
-                onClick={() => setSelected(v)}
-              >
-                {/*<Image src={v.thumb} alt={v.title} className="object-cover w-full h-full" />*/}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition"></div>
-              </button>
-            </DialogTrigger>
-            <DialogContent className="max-w-2xl p-0 bg-black">
+      {/* Fila de videos secundarios */}
+      <div className="flex gap-6 overflow-x-auto pb-2">
+        {otherVideos.map((video) => (
+          <div
+            key={video._id}
+            className="min-w-[320px] max-w-md flex-shrink-0"
+          >
+            <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-md">
               <iframe
-                src={v.vimeo}
-                allow="autoplay; fullscreen"
-                className="w-full aspect-video rounded-t"
-                title={v.title}
-                autoFocus
+                src={`https://player.vimeo.com/video/${extractVimeoId(video.vimeoUrl)}?title=0&byline=0&portrait=0`}
+                width="100%"
+                height="100%"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                title={video.title}
+                loading="lazy"
               />
-            </DialogContent>
-          </Dialog>
+            </div>
+            <span className="font-raleway text-sm px-2 pb-2 pt-1 block text-center mt-2">{video.title}</span>
+          </div>
         ))}
       </div>
     </section>
-  );
+  )
 }

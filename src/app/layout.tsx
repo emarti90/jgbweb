@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 
 // Importa Google Fonts (Next.js 13+)
 import { Raleway, Playfair_Display } from 'next/font/google'
+import VideoBook from '@/components/VideoBook';
 
 
 const raleway = Raleway({
@@ -33,7 +34,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="es" className={`${raleway.variable} ${ralewayRegular.variable} ${playfair.variable}`}>
       <body>
         <Header />
-        
         {children}
       </body>
     </html>
