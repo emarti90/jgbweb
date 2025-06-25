@@ -9,7 +9,7 @@ type AboutType = {
 
 export default function About({ about }: { about: AboutType }) {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center gap-8 my-12">
+    <section id="about" className="flex flex-col md:flex-row items-center justify-center gap-8 my-12">
       <div className="flex-shrink-0">
         <Image
           src={about.photoUrl}

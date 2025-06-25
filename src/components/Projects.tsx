@@ -12,7 +12,7 @@ type Project = {
 
 export default function Projects({ projects }: { projects: Project[] }) {
   return (
-    <section>
+    <section id="projects">
       <div className="flex flex-wrap justify-center gap-8">
         {projects.map((proj) => (
           <div

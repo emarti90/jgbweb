@@ -1,10 +1,11 @@
 const es = {
   menu: {
-    videobook: "VIDEOBOOK",
-    projects: "PROJECTS",
-    gallery: "GALLERY",
-    about: "ABOUT",
-    contact: "CONTACT",
+    videobook: "Videobook",
+    projects: "Projects",
+    gallery: "Gallery",
+    about: "About",
+    contact: "Contact",
+    blog: "Blog"
   },
   home:{
     title: "Home",

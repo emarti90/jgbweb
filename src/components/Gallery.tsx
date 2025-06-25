@@ -18,7 +18,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
   const orderedImages = [...highlighted, ...normal];
 
   return (
-    <section>
+    <section id="gallery">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {orderedImages.map((img) => (
           <div

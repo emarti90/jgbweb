@@ -33,8 +33,8 @@ export default function LanguageManager() {
             className={`
               flex items-center gap-1 px-2 py-1 rounded border transition
               ${isSelected 
-                ? 'bg-white border-cream border-2 text-clay' 
-                : 'bg-white border-transparent text-clay'}
+                ? 'bg-white border-sage border-2 text-sage' 
+                : 'bg-white border-transparent text-sage'}
             `}
             onClick={() => handleChange(l.code)}
           >

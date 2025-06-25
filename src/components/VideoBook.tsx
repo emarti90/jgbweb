@@ -19,7 +19,7 @@ export default function VideoBook({ videos }: { videos: Video[] }) {
   const otherVideos = videos.filter((v) => v._id !== mainVideo._id)
 
   return (
-    <section>
+    <section id="videobook">
        {/* Video principal grande */}
       <div className="mb-8 w-full">
         <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
@@ -34,15 +34,15 @@ export default function VideoBook({ videos }: { videos: Video[] }) {
             loading="lazy"
           />
         </div>
-        <h3 className="font-raleway text-lg p-3">{mainVideo.title}</h3>
+        <h3 className="font-raleway text-lg text-teal text-center p-3">{mainVideo.title}</h3>
       </div>
 
       {/* Fila de videos secundarios */}
-      <div className="flex gap-6 overflow-x-auto pb-2">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-6 pb-2 items-center md:items-stretch w-full">
         {otherVideos.map((video) => (
           <div
             key={video._id}
-            className="min-w-[320px] max-w-md flex-shrink-0"
+            className="w-full md:min-w-[320px] md:max-w-md md:flex-shrink-0"
           >
             <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-md">
               <iframe
@@ -56,7 +56,7 @@ export default function VideoBook({ videos }: { videos: Video[] }) {
                 loading="lazy"
               />
             </div>
-            <span className="font-raleway text-sm px-2 pb-2 pt-1 block text-center mt-2">{video.title}</span>
+            <span className="font-raleway text-teal text-sm px-2 pb-2 pt-1 block text-center mt-2">{video.title}</span>
           </div>
         ))}
       </div>
