@@ -31,16 +31,17 @@ export default function LanguageManager() {
           <button
             key={l.code}
             className={`
-              flex items-center gap-1 px-2 py-1 rounded border transition
+              flex items-center gap-1 px-2 py-1 rounded transition
               ${isSelected 
-                ? 'bg-white border-sage border-2 text-sage' 
-                : 'bg-white border-transparent text-sage'}
+                ? 'bg-white text-sage border-2 border-sage md:border-2 md:border-sage' // Border en todos, pero el span solo en desktop
+                : 'bg-white text-sage border-2 border-transparent md:border-2 md:border-transparent'}
             `}
             onClick={() => handleChange(l.code)}
           >
             <Image src={l.flag} alt={l.label} width={20} height={20} className="w-5 h-5" />
-            <span className="font-raleway font-normal">{l.label}</span>
+            <span className="font-raleway font-normal hidden md:inline">{l.label}</span>
           </button>
+
         );
       })}
     </div>

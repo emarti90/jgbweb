@@ -9,6 +9,24 @@ const es = {
   },
   home:{
     title: "Home",
+  },
+  videobook:{
+    title: "Videobook",
+  },
+  projects:{
+    title: "Ongoing Projects",
+  },
+  gallery:{
+    title:"Gallery",
+  },
+  about:{
+    title:"About",
+  },
+  contact:{
+    title: "Contact",
+  },
+  blog:{
+    title:"Blog",
   }
 };
 export default es;

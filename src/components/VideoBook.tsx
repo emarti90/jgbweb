@@ -34,7 +34,7 @@ export default function VideoBook({ videos }: { videos: Video[] }) {
             loading="lazy"
           />
         </div>
-        <h3 className="font-raleway text-lg text-teal text-center p-3">{mainVideo.title}</h3>
+        <h3 className="font-raleway text-lg text-sage text-center p-3">{mainVideo.title}</h3>
       </div>
 
       {/* Fila de videos secundarios */}
@@ -56,7 +56,7 @@ export default function VideoBook({ videos }: { videos: Video[] }) {
                 loading="lazy"
               />
             </div>
-            <span className="font-raleway text-teal text-sm px-2 pb-2 pt-1 block text-center mt-2">{video.title}</span>
+            <span className="font-raleway text-sage text-sm px-2 pb-2 pt-1 block text-center mt-2">{video.title}</span>
           </div>
         ))}
       </div>

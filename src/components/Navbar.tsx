@@ -72,52 +72,51 @@ export default function Navbar({ lang }: { lang: string }) {
 
       {/* Hamburguesa solo en mobile */}
       <div className="md:hidden flex justify-center items-center w-full py-2">
-  <button
-    className="text-3xl text-sage"
-    onClick={() => setMenuOpen(true)}
-    aria-label="Abrir menú"
-  >
-    <FiMenu />
-  </button>
-</div>
+        <button
+            className="text-3xl text-sage"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Abrir menú"
+        >
+            <FiMenu />
+        </button>
+      </div>
 
       {/* Menú desplegable */}
-{menuOpen && (
-  <div className="fixed top-0 left-0 right-0 z-50 w-full bg-white bg-opacity-50 text-sage flex flex-col items-center animate-fade-in">
-    {/* Botón de cierre */}
-    <button
-      className="absolute top-4 right-6 text-2xl"
-      onClick={() => setMenuOpen(false)}
-      aria-label="Cerrar menú"
-    >
-      <FiX />
-    </button>
-    <ul className="mt-8 w-full px-4 space-y-6 font-raleway text-base uppercase text-center">
-      {NAV_SECTIONS.map(({ id, label, link, type }) => (
-        <li key={id} className="w-full">
-          {type === "section" ? (
-            <a
-              href={link}
-              onClick={e => handleScroll(e, id)}
-              className="block py-2 hover:font-bold transition-colors cursor-pointer w-full"
+        {menuOpen && (
+        <div className="fixed top-0 left-0 right-0 z-50 w-full bg-white bg-opacity-50 text-sage flex flex-col items-center animate-fade-in">
+            {/* Botón de cierre */}
+            <button
+            className="absolute top-4 right-6 text-2xl"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Cerrar menú"
             >
-              {label}
-            </a>
-          ) : (
-            <Link
-              href={link}
-              className="block py-2 hover:font-bold transition-colors cursor-pointer w-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              {label}
-            </Link>
-          )}
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
-
+            <FiX />
+            </button>
+            <ul className="mt-8 w-full px-4 space-y-6 font-raleway text-base uppercase text-center">
+            {NAV_SECTIONS.map(({ id, label, link, type }) => (
+                <li key={id} className="w-full">
+                {type === "section" ? (
+                    <a
+                    href={link}
+                    onClick={e => handleScroll(e, id)}
+                    className="block py-2 hover:font-bold transition-colors cursor-pointer w-full"
+                    >
+                    {label}
+                    </a>
+                ) : (
+                    <Link
+                    href={link}
+                    className="block py-2 hover:font-bold transition-colors cursor-pointer w-full"
+                    onClick={() => setMenuOpen(false)}
+                    >
+                    {label}
+                    </Link>
+                )}
+                </li>
+            ))}
+            </ul>
+        </div>
+        )}
     </nav>
   );
 }

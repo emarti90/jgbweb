@@ -31,7 +31,7 @@ export default function RootLayout({ children, params }: { children: React.React
   return (
     <html lang={params.lang} className={`${raleway.variable} ${ralewayRegular.variable} ${playfair.variable}`}>
       <body>
-        <Header />
+        <Header lang={params.lang}/>
         {children}
       </body>
     </html>

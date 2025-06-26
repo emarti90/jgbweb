@@ -1,6 +1,6 @@
 const es = {
   menu: {
-    videobook: "Videbook",
+    videobook: "Videobook",
     projects: "Proyectos",
     gallery: "Galería",
     about: "Sobre Mi",
@@ -9,6 +9,24 @@ const es = {
   },
   home:{
     title: "Inicio",
+  },
+  videobook:{
+    title: "Videobook",
+  },
+  projects:{
+    title: "Proyectos Actuales",
+  },
+  gallery:{
+    title:"Galería",
+  },
+  about:{
+    title:"Sobre Mi",
+  },
+  contact:{
+    title: "Contacto",
+  },
+  blog:{
+    title:"Prensa",
   }
 };
 export default es;
