@@ -45,7 +45,7 @@ export default function Navbar({ lang }: { lang: string }) {
   };
 
   return (
-    <nav className="w-full bg-white py-3 px-6 flex justify-center items-center sticky top-0 z-40">
+    <nav className="w-full bg-white py-3 px-6 flex justify-center items-center text-sage sticky top-0 z-40">
       {/* Desktop navbar */}
       <ul className="hidden md:flex space-x-6 font-raleway text-base uppercase">
         {NAV_SECTIONS.map(({ id, label, link, type }) => (

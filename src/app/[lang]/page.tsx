@@ -3,6 +3,7 @@ import VideoManager from '@/components/VideoManager';
 import GalleryManager from '@/components/GalleryManager';
 import ProjectsManager from '@/components/ProjectsManager';
 import AboutManager from '@/components/AboutManager';
+import SocialLinks from '@/components/Social';
 
 type Params = Promise<{lang : string}>
 
@@ -21,6 +22,7 @@ export default async function HomePage(props: { params: Params }) {
       <GalleryManager />
       <h1 className="font-playfair text-3xl text-sage mb-8 mt-10 text-center">{t.about.title.toUpperCase()}</h1>
       <AboutManager />
+      <SocialLinks />
     </main>
   );
 }

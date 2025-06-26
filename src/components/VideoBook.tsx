@@ -38,7 +38,9 @@ export default function VideoBook({ videos }: { videos: Video[] }) {
       </div>
 
       {/* Fila de videos secundarios */}
-      <div className="flex flex-col md:flex-row gap-8 md:gap-6 pb-2 items-center md:items-stretch w-full">
+      <div
+        className="flex flex-col md:flex-row gap-8 md:gap-6 pb-2 w-full md:overflow-x-auto md:whitespace-nowrap items-center md:items-stretch"
+      >
         {otherVideos.map((video) => (
           <div
             key={video._id}
@@ -56,10 +58,13 @@ export default function VideoBook({ videos }: { videos: Video[] }) {
                 loading="lazy"
               />
             </div>
-            <span className="font-raleway text-sage text-sm px-2 pb-2 pt-1 block text-center mt-2">{video.title}</span>
+            <span className="font-raleway text-sage text-sm px-2 pb-2 pt-1 block text-center mt-2">
+              {video.title}
+            </span>
           </div>
         ))}
       </div>
+
     </section>
   )
 }
