@@ -1,11 +1,10 @@
-import { FaInstagram, FaEnvelope, FaVimeoV, FaXTwitter, FaImdb } from "react-icons/fa6";
+import { FaInstagram, FaVimeoV, FaXTwitter, FaImdb } from "react-icons/fa6";
 
 const SOCIALS = [
   { icon: FaInstagram, label: "Instagram", url: "https://www.instagram.com/javat.gb/" },
   { icon: FaImdb, label: "IMDB", url: "https://pro.imdb.com/name/nm14862880" },
   { icon: FaXTwitter, label: "X (Twitter)", url: "https://x.com/Javatgb" },
   { icon: FaVimeoV, label: "Vimeo", url: "https://vimeo.com/javiguerrero" },
-  { icon: FaEnvelope, label: "Mail", url: "mailto:guerrero.actor@gmail.com" },
 ];
 
 export default function SocialLinks() {

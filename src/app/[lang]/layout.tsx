@@ -1,6 +1,7 @@
 import '../globals.css'
 
 import Header from '@/components/Header'
+import Footer from '@/components/Footer';
 
 // Importa Google Fonts (Next.js 13+)
 import { Raleway, Playfair_Display } from 'next/font/google'
@@ -27,12 +28,15 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-export default function RootLayout({ children, params }: { children: React.ReactNode, params: { lang: string } }) {
+export default async function LangLayout({ children, params }: { children: React.ReactNode, params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
   return (
-    <html lang={params.lang} className={`${raleway.variable} ${ralewayRegular.variable} ${playfair.variable}`}>
+    <html lang={lang} className={`${raleway.variable} ${ralewayRegular.variable} ${playfair.variable}`}>
       <body>
-        <Header lang={params.lang}/>
+        <Header lang={lang}/>
         {children}
+        <Footer />
       </body>
     </html>
   );
