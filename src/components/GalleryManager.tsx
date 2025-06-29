@@ -2,7 +2,7 @@
 import { getGallery } from "@/lib/getGallery";
 import Gallery from "./Gallery";
 
-export default async function GalleryManager() {
+export default async function GalleryManager({ lang }:{ lang:string }) {
   const images = await getGallery();
-  return <Gallery images={images} />;
+  return <Gallery lang={lang} images={images} />;
 }

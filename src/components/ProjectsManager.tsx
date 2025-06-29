@@ -2,7 +2,7 @@
 import { getProjects } from "@/lib/getProjects";
 import Projects from "./Projects";
 
-export default async function ProjectsManager() {
+export default async function ProjectsManager({ lang }: { lang: string }) {
   const projects = await getProjects();
-  return <Projects projects={projects} />;
+  return <Projects lang={lang} projects={projects} />;
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { FiX } from "react-icons/fi";
+import { getTranslations } from "@/lib/useTranslations";
 
 type GalleryImage = {
   _id: string;
@@ -12,7 +13,7 @@ type GalleryImage = {
   highlight?: boolean;
 };
 
-export default function Gallery({ images }: { images: GalleryImage[] }) {
+export default function Gallery({ lang, images }: { lang: string, images: GalleryImage[] }) {
   // Separar destacadas y normales
   const highlighted = images.filter(img => img.highlight);
   const normal = images.filter(img => !img.highlight);
@@ -34,8 +35,11 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
     setSelected(null);
   };
 
+  const t = getTranslations(lang)
+
   return (
-    <section id="gallery">
+    <section id="gallery" className="scroll-mt-26">
+      <h1 className="font-playfair text-3xl text-sage mb-8 mt-10 text-center">{t.gallery.title.toUpperCase()}</h1>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {orderedImages.map((img) => (
           <div

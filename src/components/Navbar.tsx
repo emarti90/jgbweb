@@ -11,12 +11,12 @@ export default function Navbar({ lang }: { lang: string }) {
   const menuRef = useRef<HTMLDivElement>(null);
 
   const NAV_SECTIONS = [
-    { id: "videobook", label: t.menu.videobook, link: "#videobook", type: "section" },
-    { id: "projects", label: t.menu.projects, link: "#projects", type: "section" },
-    { id: "gallery", label: t.menu.gallery, link: "#gallery", type: "section" },
-    { id: "about", label: t.menu.about, link: "#about", type: "section" },
-    { id: "contact", label: t.menu.contact, link: "/contact", type: "page" },
-    { id: "blog", label: t.menu.blog, link: "/blog", type: "page" },
+    { id: "videobook", label: t.menu.videobook, link: `/${lang}#videobook` },
+    { id: "projects", label: t.menu.projects, link: `/${lang}#projects` },
+    { id: "gallery", label: t.menu.gallery, link: `/${lang}#gallery` },
+    { id: "about", label: t.menu.about, link: `/${lang}#about`},
+    { id: "contact", label: t.menu.contact, link: `/${lang}/contact` },
+    { id: "blog", label: t.menu.blog, link: `/${lang}/blog` },
   ];
 
   // Cierra el menú al hacer click fuera
@@ -31,41 +31,18 @@ export default function Navbar({ lang }: { lang: string }) {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [menuOpen]);
 
-  // Scroll suave (solo para secciones)
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    id: string
-  ) => {
-    e.preventDefault();
-    setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <nav className="w-full bg-white py-3 px-6 flex justify-center items-center text-sage sticky top-0 z-40">
       {/* Desktop navbar */}
       <ul className="hidden md:flex space-x-6 font-raleway text-base uppercase">
-        {NAV_SECTIONS.map(({ id, label, link, type }) => (
+        {NAV_SECTIONS.map(({ id, label, link }) => (
           <li key={id}>
-            {type === "section" ? (
-              <a
-                href={link}
-                onClick={e => handleScroll(e, id)}
-                className="hover:font-bold transition-colors cursor-pointer"
-              >
-                {label}
-              </a>
-            ) : (
-              <Link
-                href={link}
-                className="hover:font-bold transition-colors cursor-pointer"
-              >
-                {label}
-              </Link>
-            )}
+            <Link
+              href={link}
+              className="hover:font-bold transition-colors cursor-pointer"
+            >
+              {label}
+            </Link>
           </li>
         ))}
       </ul>
@@ -93,25 +70,15 @@ export default function Navbar({ lang }: { lang: string }) {
             <FiX />
             </button>
             <ul className="mt-8 w-full px-4 space-y-6 font-raleway text-base uppercase text-center">
-            {NAV_SECTIONS.map(({ id, label, link, type }) => (
+            {NAV_SECTIONS.map(({ id, label, link }) => (
                 <li key={id} className="w-full">
-                {type === "section" ? (
-                    <a
-                    href={link}
-                    onClick={e => handleScroll(e, id)}
-                    className="block py-2 hover:font-bold transition-colors cursor-pointer w-full"
-                    >
-                    {label}
-                    </a>
-                ) : (
-                    <Link
+                  <Link
                     href={link}
                     className="block py-2 hover:font-bold transition-colors cursor-pointer w-full"
                     onClick={() => setMenuOpen(false)}
                     >
                     {label}
-                    </Link>
-                )}
+                  </Link>
                 </li>
             ))}
             </ul>

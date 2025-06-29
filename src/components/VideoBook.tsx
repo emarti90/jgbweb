@@ -1,5 +1,7 @@
 "use client"
 
+import { getTranslations } from "@/lib/useTranslations"
+
 type Video = {
   _id: string
   title: string
@@ -12,14 +14,17 @@ function extractVimeoId(url: string): string | null {
   return match ? match[1] : null
 }
 
-export default function VideoBook({ videos }: { videos: Video[] }) {
+export default function VideoBook({ lang, videos }: { lang: string, videos: Video[] }) {
   if (!videos.length) return <div>No hay vídeos disponibles.</div>
 
   const mainVideo = videos.find((v) => v.main) || videos[0]
   const otherVideos = videos.filter((v) => v._id !== mainVideo._id)
 
+  const t = getTranslations(lang);
+
   return (
-    <section id="videobook">
+    <section id="videobook" className="scroll-mt-26">
+      <h1 className="font-playfair text-3xl text-sage mb-8 text-center">{t.videobook.title.toUpperCase()}</h1>
        {/* Video principal grande */}
       <div className="mb-8 w-full">
         <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">

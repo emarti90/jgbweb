@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 export default function Header({ lang }: { lang: string }) {
   return (
-    <header className="w-full bg-white flex flex-col items-center">
+    <header className="sticky top-0 z-50 w-full bg-white flex flex-col items-center">
       <div className="w-full flex items-center justify-between px-4 py-2">
         <Link href="/" className="flex items-center gap-3 group">
           <Image

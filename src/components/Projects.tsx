@@ -1,5 +1,6 @@
 "use client";
 
+import { getTranslations } from "@/lib/useTranslations";
 import Image from "next/image";
 
 type Project = {
@@ -10,9 +11,13 @@ type Project = {
   tags?: string[];
 };
 
-export default function Projects({ projects }: { projects: Project[] }) {
+export default function Projects({ lang, projects }: { lang: string, projects: Project[] }) {
+
+  const t = getTranslations(lang)
+
   return (
-    <section id="projects" className="py-8">
+    <section id="projects" className="scroll-mt-26">
+      <h1 className="font-playfair text-3xl text-sage mb-8 mt-10 text-center">{t.projects.title.toUpperCase()}</h1>
       <div className="flex justify-center flex-wrap gap-8">
         {projects.map((proj) => (
           <div
