@@ -11,10 +11,12 @@ export async function getArticles({ lang }: { lang: string }) {
 }
 
 export async function getArticleBySlug({ lang, slug }: {lang: string, slug: string }) {
+  console.log("getArticleBySlug recibe:", lang, slug);
   const title = lang === 'en' ? 'title_en' : 'title_es'
   const content = lang === 'en' ? 'content_en' : 'content_es'
+  const article = lang === 'en' ? 'slug_en' : 'slug_es'
   return sanity.fetch(
-    `*[_type == "article" && slug.current == $slug][0]{
+    `*[_type == "article" && ${article}.current == $slug][0]{
       _id, "title":${title}, "content":${content}, date, imageUrl
     }`, { slug }
   );
