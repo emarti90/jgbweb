@@ -7,9 +7,6 @@ const es = {
     contact: "Contacto",
     blog: "Blog"
   },
-  home:{
-    title: "Inicio",
-  },
   videobook:{
     title: "Videobook",
   },
@@ -21,9 +18,19 @@ const es = {
   },
   about:{
     title:"Sobre Mi",
+    download:"Decargar CV"
   },
   contact:{
-    title: "Contacto",
+    title: "¿Hablamos?",
+    subtitle: "¡Hola! ¿Qué tal? gracias por pasarte un ratito por aquí. Si quieres compartir algo conmigo:",
+    name: "Nombre",
+    name_preview: "Tu nombre",
+    email: "Email",
+    message: "Mensaje",
+    message_preview: "Escribe tu mensaje...",
+    success: "¡Mensaje enviado con éxito!",
+    failed: "¡Error al enviar! Inténtalo de nuevo."
+
   },
   blog:{
     title:"Prensa",

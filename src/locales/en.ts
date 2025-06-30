@@ -7,9 +7,6 @@ const es = {
     contact: "Contact",
     blog: "Blog"
   },
-  home:{
-    title: "Home",
-  },
   videobook:{
     title: "Videobook",
   },
@@ -21,9 +18,18 @@ const es = {
   },
   about:{
     title:"About",
+    download:"Download CV"
   },
   contact:{
     title: "Contact",
+    subtitle: "Hi! How are you? Thank you for visiting. If you want to share something:",
+    name: "Name",
+    name_preview: "Your name",
+    email: "Email",
+    message: "Message",
+    message_preview: "Write your message...",
+    success: "Message send successfully!",
+    failed: "Message failed! Try again."
   },
   blog:{
     title:"Blog",

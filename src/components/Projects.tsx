@@ -11,9 +11,26 @@ type Project = {
   tags?: string[];
 };
 
+const TAGS: Record<string, {es:string, en:string}> = {
+  action:   { es: "Acción",      en: "Action" },
+  adventure:{ es: "Aventura",    en: "Adventure" },
+  comedy:   { es: "Comedia",     en: "Comedy" },
+  drama:    { es: "Drama",       en: "Drama" },
+  scifi:    { es: "Ciencia Ficción", en: "Sci-Fi" },
+  thriller: { es: "Thriller",    en: "Thriller" },
+  fantasy:  { es: "Fantasía",    en: "Fantasy" },
+  horror:   { es: "Terror",      en: "Horror" },
+  romance:  { es: "Romance",     en: "Romance" },
+  crime:    { es: "Crimen",      en: "Crime" },
+  mistery:  { es: "Misterio",    en: "Mistery" },
+  musical:  { es: "Musical",     en: "Musical" },
+  other:    { es: "Otro",        en: "Other" }
+}
+
 export default function Projects({ lang, projects }: { lang: string, projects: Project[] }) {
 
   const t = getTranslations(lang)
+  const l = lang as "es" | "en"
 
   return (
     <section id="projects" className="scroll-mt-26">
@@ -59,7 +76,7 @@ export default function Projects({ lang, projects }: { lang: string, projects: P
                 {proj.tags && proj.tags.length > 0 && (
                   <div className="flex flex-wrap justify-center gap-2 mt-4 w-full">
                     {proj.tags.map(tag => (
-                      <span key={tag} className="bg-cream text-xs px-2 py-1 rounded text-black">{tag}</span>
+                      <span key={tag} className="bg-cream text-xs px-2 py-1 rounded text-black">{TAGS[tag]?.[l] || TAGS["other"][l]}</span>
                     ))}
                   </div>
                 )}

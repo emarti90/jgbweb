@@ -15,8 +15,15 @@ export default {
       validation: (Rule: any) => Rule.required(),
     },
     {
-      name: "bio",
-      title: "Biografía",
+      name: "bio_es",
+      title: "Biografía Español",
+      type: "array",
+      of: [{ type: "block" }],
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: "bio_en",
+      title: "Biografía Inglés",
       type: "array",
       of: [{ type: "block" }],
       validation: (Rule: any) => Rule.required(),

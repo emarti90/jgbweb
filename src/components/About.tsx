@@ -38,7 +38,7 @@ export default function About({ lang, about }: { lang: string, about: AboutType 
               rel="noopener noreferrer"
               className="bg-sage text-white px-5 py-2 rounded-full shadow hover:bg-opacity-90 font-raleway transition"
             >
-              Descargar CV
+              {t.about.download}
             </a>
           </div>
         </div>

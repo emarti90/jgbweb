@@ -1,0 +1,149 @@
+"use client";
+
+import { useState } from "react";
+import { FiMail, FiUser, FiMessageCircle } from "react-icons/fi";
+import { FaInstagram, FaXTwitter, FaVimeo, FaEnvelope } from "react-icons/fa6";
+import { FaImdb } from "react-icons/fa";
+import { getTranslations } from "@/lib/useTranslations";
+
+export default function ContactForm({ lang }: { lang: string }) {
+
+  const t = getTranslations(lang)
+
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  // Simula envío (aquí iría tu API real)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      // Aquí tu lógica real de envío
+      await new Promise(res => setTimeout(res, 1000));
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
+    setTimeout(() => setStatus("idle"), 3000);
+  };
+
+  return (
+    <main className="min-h-screen bg-white flex flex-col items-center justify-center py-12 px-4">
+      {/* Mensaje de bienvenida */}
+      <h1 className="text-sage font-playfair text-3xl text-center mb-4">{t.contact.title.toUpperCase()}</h1>
+      <p className="text-sage font-raleway text-lg text-center max-w-xl mb-8">
+        {t.contact.subtitle}
+      </p>
+
+      {/* Redes sociales centradas */}
+      <div className="flex gap-4 mb-8 justify-center">
+        <a
+          href="https://instagram.com/javat.gb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-sage rounded-full p-3 flex items-center justify-center hover:scale-120 transition"
+          title="Instagram"
+        >
+          <FaInstagram size={24} />
+        </a>
+        <a
+          href="https://pro.imdb.com/name/nm14862880"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-sage rounded-full p-3 flex items-center justify-center hover:scale-120 transition"
+          title="IMDB"
+        >
+          <FaImdb size={24} />
+        </a>
+        <a
+          href="https://x.com/Javatgb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-sage rounded-full p-3 flex items-center justify-center hover:scale-120 transition"
+          title="X / Twitter"
+        >
+          <FaXTwitter size={24} />
+        </a>
+        <a
+          href="https://vimeo.com/javiguerrero"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-sage rounded-full p-3 flex items-center justify-center hover:scale-120 transition"
+          title="Vimeo"
+        >
+          <FaVimeo size={24} />
+        </a>
+        <a
+          href="mailto:guerreroactor@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-sage rounded-full p-3 flex items-center justify-center hover:scale-120 transition"
+          title="Mail"
+        >
+          <FaEnvelope size={24} />
+        </a>
+      </div>
+
+      {/* Formulario */}
+      <form
+        onSubmit={handleSubmit}
+        className="bg-sage bg-opacity-90 p-8 rounded-xl shadow-lg flex flex-col gap-6 w-full max-w-xl"
+        autoComplete="off"
+      >
+        <label className="flex flex-col gap-2">
+          <span className="font-raleway text-sm text-white flex items-center gap-2">
+            <FiUser /> {t.contact.name}
+          </span>
+          <input
+            required
+            type="text"
+            className="bg-white rounded-full px-3 py-2 placeholder:text-sage focus:outline-none focus:ring-2 focus:ring-cream transition"
+            value={form.name}
+            onChange={e => setForm({ ...form, name: e.target.value })}
+            placeholder={t.contact.name_preview}
+          />
+        </label>
+        <label className="flex flex-col gap-2">
+          <span className="font-raleway text-sm text-white flex items-center gap-2">
+            <FiMail /> {t.contact.email}
+          </span>
+          <input
+            required
+            type="email"
+            className="bg-white rounded-full px-3 py-2 placeholder:text-sage focus:outline-none focus:ring-2 focus:ring-cream transition"
+            value={form.email}
+            onChange={e => setForm({ ...form, email: e.target.value })}
+            placeholder="example@email.com"
+          />
+        </label>
+        <label className="flex flex-col gap-2">
+          <span className="font-raleway text-sm text-white flex items-center gap-2">
+            <FiMessageCircle /> {t.contact.message}
+          </span>
+          <textarea
+            required
+            rows={5}
+            className="bg-white rounded-xl px-3 py-2 resize-none placeholder:text-sage focus:outline-none focus:ring-2 focus:ring-cream transition"
+            value={form.message}
+            onChange={e => setForm({ ...form, message: e.target.value })}
+            placeholder={t.contact.message_preview}
+          />
+        </label>
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="bg-cream text-black font-raleway rounded-full px-5 py-2 mt-2 shadow hover:bg-opacity-90 transition"
+        >
+          {status === "loading" ? "Enviando..." : "Enviar"}
+        </button>
+        {status === "success" && (
+          <span className="text-green-700 text-center mt-2">{t.contact.success}</span>
+        )}
+        {status === "error" && (
+          <span className="text-red-600 text-center mt-2">{t.contact.failed}</span>
+        )}
+      </form>
+    </main>
+  );
+}
