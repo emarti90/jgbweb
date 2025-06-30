@@ -1,5 +1,13 @@
 "use client";
-import SocialLinks from "@/components/Social";
+import { FaInstagram, FaVimeoV, FaXTwitter } from "react-icons/fa6";
+import { FaImdb } from "react-icons/fa";
+
+const SOCIALS = [
+  { icon: FaInstagram, label: "Instagram", url: "https://www.instagram.com/javat.gb/" },
+  { icon: FaImdb, label: "IMDB", url: "https://pro.imdb.com/name/nm14862880" },
+  { icon: FaXTwitter, label: "X (Twitter)", url: "https://x.com/Javatgb" },
+  { icon: FaVimeoV, label: "Vimeo", url: "https://vimeo.com/javiguerrero" },
+];
 
 export default function Footer() {
   return (
@@ -17,7 +25,20 @@ export default function Footer() {
         </div>
         {/* Social Links (abajo en móvil, izquierda en desktop) */}
         <div className="w-full flex justify-center md:justify-start order-2 md:order-1">
-          <SocialLinks />
+          <div className="flex gap-6">
+            {SOCIALS.map(({ icon: Icon, label, url }) => (
+              <a
+                key={label}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="rounded-xl p-3 hover:scale-110 transition-colors duration-200 hover:scale-120 text-white"
+              >
+                <Icon size={28} className="text-inherit" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
