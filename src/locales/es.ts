@@ -29,11 +29,17 @@ const es = {
     message: "Mensaje",
     message_preview: "Escribe tu mensaje...",
     success: "¡Mensaje enviado con éxito!",
-    failed: "¡Error al enviar! Inténtalo de nuevo."
+    failed: "¡Error al enviar! Inténtalo de nuevo.",
+    submit: "Enviar"
 
   },
   blog:{
     title:"Prensa",
+  },
+  ack:{
+    title: "¡Gracias por tu mensaje!",
+    desc: "He recibido tu mensaje correctamente y te responderé lo antes posible.",
+    back: "Volver al inicio",
   }
 };
 export default es;

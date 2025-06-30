@@ -29,10 +29,16 @@ const es = {
     message: "Message",
     message_preview: "Write your message...",
     success: "Message send successfully!",
-    failed: "Message failed! Try again."
+    failed: "Message failed! Try again.",
+    submit: "Send"
   },
   blog:{
     title:"Blog",
+  },
+  ack:{
+    title: "Thank you for your message!",
+    desc: "I have received your message and will get back to you as soon as possible.",
+    back: "Back to home",
   }
 };
 export default es;
