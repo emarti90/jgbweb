@@ -9,7 +9,7 @@ export default async function AcknowledgePage({ params }: Props) {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-[60vh]">
-      <div className="bg-sage text-white rounded-xl shadow-lg p-8 max-w-lg w-full text-center">
+      <div className="text-white rounded-xl shadow-lg p-8 max-w-lg w-full text-center">
         <h1 className="text-2xl font-playfair mb-4">{t.ack.title}</h1>
         <p className="mb-6">{t.ack.desc}</p>
         <Link
