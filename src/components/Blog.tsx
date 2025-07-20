@@ -34,9 +34,8 @@ export default function Blog({ lang, articles }: { lang: string, articles: Array
         >
           {article.imageUrl && (
             <div className="
-              w-32 h-32
-    flex-shrink-0 flex items-center justify-center rounded overflow-hidden bg-white/10 mb-4 sm:mb-0
-    aspect-square
+              w-full sm:w-32 h-40 sm:h-32
+              flex-shrink-0 flex items-center justify-center rounded overflow-hidden bg-white/10 mb-4 sm:mb-0
             ">
               <Image
                 src={article.imageUrl}

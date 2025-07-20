@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
@@ -33,6 +33,9 @@ body {
 .text-sage { color: #B1C29E !important; }
 .bg-teal { background: #659287 !important; }
 .text-teal { color: #659287 !important; }
+
+.font-raleway { font-family: var(--font-raleway), sans-serif; }
+.font-playfair { font-family: var(--font-playfair), serif; }
 
 .flip-card {
   perspective: 1200px;
