@@ -1,3 +1,5 @@
+import '../../globals.css'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer';
 import ReelManager from '@/components/ReelManager';
