@@ -75,7 +75,7 @@ export default function ContactForm({ lang }: { lang: string }) {
         >
         {/* Añadir un campo oculto para evitar spam */}
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value={`/${lang}/acknowledge`} />
+        <input type="hidden" name="_next" value={`https://www.javiguerreroactor.com/${lang}/acknowledge`} />
 
         <label className="flex flex-col gap-2">
             <span className="font-raleway text-sm text-white flex items-center gap-2">
