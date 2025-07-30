@@ -32,7 +32,7 @@ export default function Navbar({ lang }: { lang: string }) {
   }, [menuOpen]);
 
   return (
-    <nav className="w-full bg-white py-3 px-6 flex justify-center items-center text-sage sticky top-0 z-40">
+    <nav className="w-full bg-white py-3 px-6 flex justify-center items-center text-navy sticky top-0 z-40">
       {/* Desktop navbar */}
       <ul className="hidden md:flex space-x-6 font-raleway text-base uppercase">
         {NAV_SECTIONS.map(({ id, label, link }) => (
@@ -50,7 +50,7 @@ export default function Navbar({ lang }: { lang: string }) {
       {/* Hamburguesa solo en mobile */}
       <div className="md:hidden flex justify-center items-center w-full py-2">
         <button
-            className="text-3xl text-sage"
+            className="text-3xl text-navy"
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menú"
         >
@@ -60,7 +60,7 @@ export default function Navbar({ lang }: { lang: string }) {
 
       {/* Menú desplegable */}
         {menuOpen && (
-        <div className="fixed top-0 left-0 right-0 z-50 w-full bg-white bg-opacity-50 text-sage flex flex-col items-center animate-fade-in">
+        <div className="fixed top-0 left-0 right-0 z-50 w-full bg-white bg-opacity-50 text-navy flex flex-col items-center animate-fade-in">
             {/* Botón de cierre */}
             <button
             className="absolute top-4 right-6 text-2xl"

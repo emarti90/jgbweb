@@ -25,17 +25,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.bg-clay { background: #DEAA79 !important; }
-.text-clay { color: #DEAA79 !important; }
-.bg-cream { background: #FFE6A9 !important; }
-.text-cream { color: #FFE6A9 !important; }
-.bg-sage { background: #B1C29E !important; }
-.text-sage { color: #B1C29E !important; }
-.bg-teal { background: #659287 !important; }
-.text-teal { color: #659287 !important; }
+.bg-snow { background: #f9f7f7 !important; }
+.text-snow { color: #f9f7f7 !important; }
+.bg-mist { background: #dbe2ef !important; }
+.text-mist { color: #dbe2ef !important; }
+.bg-azure { background: #3f72af !important; }
+.text-azure { color: #3f72af !important; }
+.bg-navy { background: #112d4e !important; }
+.text-navy { color: #112d4e !important; }
 
 .font-raleway { font-family: var(--font-raleway), sans-serif; }
-.font-playfair { font-family: var(--font-playfair), serif; }
+.font-noto { font-family: var(--font-noto-sans), sans-serif; }
 
 .flip-card {
   perspective: 1200px;

@@ -9,8 +9,8 @@ export default async function AcknowledgePage({ params }: Props) {
 
   return (
     <main className="flex flex-col items-center justify-center min-h-[60vh]">
-      <h1 className="text-2xl text-sage font-playfair mb-4">{t.ack.title.toUpperCase()}</h1>
-      <p className="mb-6 text-sage">{t.ack.desc}</p>
+      <h1 className="text-2xl text-navy font-noto mb-4">{t.ack.title.toUpperCase()}</h1>
+      <p className="mb-6 text-navy">{t.ack.desc}</p>
       <Link
         href={`/${lang}`}
         className="bg-cream text-black font-raleway rounded-full px-5 py-2 shadow hover:bg-opacity-90 transition"

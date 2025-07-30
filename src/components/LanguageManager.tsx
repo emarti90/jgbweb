@@ -33,8 +33,8 @@ export default function LanguageManager() {
             className={`
               flex items-center gap-1 px-2 py-1 rounded transition
               ${isSelected 
-                ? 'bg-white text-sage border-2 border-sage md:border-2 md:border-sage' // Border en todos, pero el span solo en desktop
-                : 'bg-white text-sage border-2 border-transparent md:border-2 md:border-transparent'}
+                ? 'bg-white text-navy border-2 border-navy md:border-2 md:border-navy'
+                : 'bg-white text-navy border-2 border-transparent md:border-2 md:border-transparent'}
             `}
             onClick={() => handleChange(l.code)}
           >

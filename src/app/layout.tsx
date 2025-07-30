@@ -1,4 +1,4 @@
-import { Raleway, Playfair_Display } from 'next/font/google'
+import { Raleway, Noto_Sans } from 'next/font/google'
 
 
 const raleway = Raleway({
@@ -8,16 +8,15 @@ const raleway = Raleway({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
-  weight: '400',
+const notoSans = Noto_Sans({
+  weight: ['300', '400'],       // 300 = Light (títulos), 400 = Regular
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-noto-sans',
   display: 'swap',
 });
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${raleway.variable} ${playfair.variable}`}>
+    <html lang="es" className={`${raleway.variable} ${notoSans.variable}`}>
       <body>
         {children}
       </body>

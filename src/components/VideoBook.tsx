@@ -24,7 +24,7 @@ export default function VideoBook({ lang, videos }: { lang: string, videos: Vide
 
   return (
     <section id="videobook" className="scroll-mt-26">
-      <h1 className="font-playfair text-3xl text-sage mb-8 text-center">{t.videobook.title.toUpperCase()}</h1>
+      <h1 className="font-noto text-3xl text-navy mb-8 text-center">{t.videobook.title.toUpperCase()}</h1>
        {/* Video principal grande */}
       <div className="mb-8 w-full">
         <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
@@ -39,7 +39,7 @@ export default function VideoBook({ lang, videos }: { lang: string, videos: Vide
             loading="lazy"
           />
         </div>
-        <h3 className="font-raleway text-lg text-sage text-center p-3">{mainVideo.title}</h3>
+        <h3 className="font-raleway text-lg text-navy text-center p-3">{mainVideo.title}</h3>
       </div>
 
       {/* Fila de videos secundarios */}
@@ -63,7 +63,7 @@ export default function VideoBook({ lang, videos }: { lang: string, videos: Vide
                 loading="lazy"
               />
             </div>
-            <span className="font-raleway text-sage text-sm px-2 pb-2 pt-1 block text-center mt-2">
+            <span className="font-raleway text-navy text-sm px-2 pb-2 pt-1 block text-center mt-2">
               {video.title}
             </span>
           </div>

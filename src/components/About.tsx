@@ -15,19 +15,22 @@ export default function About({ lang, about }: { lang: string, about: AboutType 
 
   return (
     <section id="about" className="scroll-mt-26">
-      <h1 className="font-playfair text-3xl text-sage mb-8 mt-10 text-center">{t.about.title.toUpperCase()}</h1>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 my-12">
-        <div className="flex-shrink-0">
+      <h1 className="font-noto text-3xl text-navy mb-8 mt-10 text-center">{t.about.title.toUpperCase()}</h1>
+      <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 my-12">
+        {/* Imagen */}
+        <div className="w-64 md:w-80 flex-shrink-0 relative md:h-auto h-64">
           <Image
             src={about.photoUrl}
             alt="Foto de perfil"
-            width={320}
-            height={320}
-            className="rounded-xl object-cover shadow-lg w-64 h-128"
+            fill
+            sizes="(min-width: 768px) 320px, 100vw"
+            className="rounded-xl object-cover shadow-lg"
+            style={{ objectPosition: "center" }}
           />
         </div>
-        <div className="flex flex-col items-center max-w-xl w-full">
-          <div className="mb-6 text-center w-full">
+        {/* Texto */}
+        <div className="flex flex-col items-center max-w-xl w-full justify-between">
+          <div className="mb-6 text-left w-full">
             <PortableText value={about.bio} />
           </div>
           <div className="w-full flex justify-center">
@@ -36,14 +39,14 @@ export default function About({ lang, about }: { lang: string, about: AboutType 
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-sage text-white px-5 py-2 rounded-full shadow hover:bg-opacity-90 font-raleway transition"
+              className="bg-navy text-white px-5 py-2 rounded-full shadow hover:bg-opacity-90 font-raleway transition"
             >
               {t.about.download}
             </a>
           </div>
         </div>
       </div>
-      
     </section>
+
   );
 }

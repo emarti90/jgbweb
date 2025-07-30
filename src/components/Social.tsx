@@ -18,7 +18,7 @@ export default function SocialLinks() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="rounded-xl bg-sage p-3 hover:scale-110 transition-colors duration-200 shadow text-white"
+            className="rounded-xl bg-navy p-3 hover:scale-110 transition-colors duration-200 shadow text-white"
           >
             <Icon size={28} className="text-inherit" />
           </a>

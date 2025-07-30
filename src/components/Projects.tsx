@@ -34,7 +34,7 @@ export default function Projects({ lang, projects }: { lang: string, projects: P
 
   return (
     <section id="projects" className="scroll-mt-26">
-      <h1 className="font-playfair text-3xl text-sage mb-8 mt-10 text-center">{t.projects.title.toUpperCase()}</h1>
+      <h1 className="font-noto text-3xl text-navy mb-8 mt-10 text-center">{t.projects.title.toUpperCase()}</h1>
       <div className="flex justify-center flex-wrap gap-8">
         {projects.map((proj) => (
           <div
@@ -67,7 +67,7 @@ export default function Projects({ lang, projects }: { lang: string, projects: P
                     z-10
                   "
                 >
-                  <h3 className="font-playfair text-lg text-center text-white drop-shadow-md">{proj.title}</h3>
+                  <h3 className="font-noto text-lg text-center text-white drop-shadow-md">{proj.title}</h3>
                 </div>
               </div>
               {/* Cara trasera */}
@@ -76,7 +76,7 @@ export default function Projects({ lang, projects }: { lang: string, projects: P
                 {proj.tags && proj.tags.length > 0 && (
                   <div className="flex flex-wrap justify-center gap-2 mt-4 w-full">
                     {proj.tags.map(tag => (
-                      <span key={tag} className="bg-cream text-xs px-2 py-1 rounded text-black">{TAGS[tag]?.[l] || TAGS["other"][l]}</span>
+                      <span key={tag} className="bg-mist text-xs px-2 py-1 rounded text-black">{TAGS[tag]?.[l] || TAGS["other"][l]}</span>
                     ))}
                   </div>
                 )}

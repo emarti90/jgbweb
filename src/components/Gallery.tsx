@@ -39,7 +39,7 @@ export default function Gallery({ lang, images }: { lang: string, images: Galler
 
   return (
     <section id="gallery" className="scroll-mt-26">
-      <h1 className="font-playfair text-3xl text-sage mb-8 mt-10 text-center">{t.gallery.title.toUpperCase()}</h1>
+      <h1 className="font-noto text-3xl text-navy mb-8 mt-10 text-center">{t.gallery.title.toUpperCase()}</h1>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         {orderedImages.map((img) => (
           <div

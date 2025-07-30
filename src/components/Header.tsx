@@ -9,7 +9,7 @@ export default function Header({ lang }: { lang: string }) {
       <div className="w-full flex items-center justify-between px-4 py-2">
         <Link href="/" className="flex items-center gap-3 group">
           <Image
-            src="/logo-sage.svg"
+            src="/logo-navy.svg"
             alt="Logo"
             width={40}
             height={40}
@@ -17,8 +17,8 @@ export default function Header({ lang }: { lang: string }) {
             priority
           />
           <span className="flex items-baseline gap-1">
-            <span className="font-raleway font-extralight text-2xl text-sage">Javi</span>
-            <span className="font-raleway-regular font-bold text-2xl text-sage">Guerrero</span>
+            <span className="font-raleway font-extralight text-2xl text-navy">Javi</span>
+            <span className="font-raleway-regular font-bold text-2xl text-navy">Guerrero</span>
           </span>
         </Link>
         <LanguageManager />
