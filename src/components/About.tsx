@@ -17,18 +17,16 @@ export default function About({ lang, about }: { lang: string, about: AboutType 
     <section id="about" className="scroll-mt-26">
       <h1 className="font-noto text-3xl text-navy mb-8 mt-10 text-center">{t.about.title.toUpperCase()}</h1>
       <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 my-12">
-        {/* Imagen */}
-        <div className="w-64 md:w-80 flex-shrink-0 relative md:h-auto h-64">
+        <div className="w-64 aspect-[3/4] md:w-80 md:h-auto flex-shrink-0 relative">
           <Image
             src={about.photoUrl}
             alt="Foto de perfil"
             fill
             sizes="(min-width: 768px) 320px, 100vw"
             className="rounded-xl object-cover shadow-lg"
-            style={{ objectPosition: "center" }}
+            style={{ objectPosition: "center top" }}
           />
         </div>
-        {/* Texto */}
         <div className="flex flex-col items-center max-w-xl w-full justify-between">
           <div className="mb-6 text-left w-full">
             <PortableText value={about.bio} />

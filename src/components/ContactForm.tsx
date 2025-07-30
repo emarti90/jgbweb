@@ -85,7 +85,7 @@ export default function ContactForm({ lang }: { lang: string }) {
             required
             type="text"
             name="name"
-            className="bg-white rounded-full px-3 py-2 placeholder:text-navy focus:outline-none focus:ring-2 focus:ring-cream transition"
+            className="bg-white rounded-full px-3 py-2 placeholder:text-navy focus:outline-none focus:ring-2 focus:ring-azure transition"
             placeholder={t.contact.name_preview}
             />
         </label>
@@ -97,7 +97,7 @@ export default function ContactForm({ lang }: { lang: string }) {
             required
             type="email"
             name="email"
-            className="bg-white rounded-full px-3 py-2 placeholder:text-navy focus:outline-none focus:ring-2 focus:ring-cream transition"
+            className="bg-white rounded-full px-3 py-2 placeholder:text-navy focus:outline-none focus:ring-2 focus:ring-azure transition"
             placeholder="example@email.com"
             />
         </label>
@@ -109,13 +109,13 @@ export default function ContactForm({ lang }: { lang: string }) {
             required
             name="message"
             rows={5}
-            className="bg-white rounded-xl px-3 py-2 resize-none placeholder:text-navy focus:outline-none focus:ring-2 focus:ring-cream transition"
+            className="bg-white rounded-xl px-3 py-2 resize-none placeholder:text-navy focus:outline-none focus:ring-2 focus:ring-azure transition"
             placeholder={t.contact.message_preview}
             />
         </label>
         <button
             type="submit"
-            className="bg-cream text-black font-raleway rounded-full px-5 py-2 mt-2 shadow hover:bg-opacity-90 transition"
+            className="bg-mist text-azure font-raleway rounded-full px-5 py-2 mt-2 shadow hover:font-bold transition"
         >
             {t.contact.submit}
         </button>

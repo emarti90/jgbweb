@@ -52,7 +52,7 @@ export default function Blog({ lang, articles }: { lang: string, articles: Array
                 {article.title}
               </h2>
               {article.date && (
-                <span className="text-xs text-mist mr-2 mt-2 sm:ml-4 whitespace-nowrap text-right">
+                <span className="text-xs text-navy mr-2 mt-2 sm:ml-4 whitespace-nowrap text-right">
                   {new Date(article.date).toLocaleDateString()}
                 </span>
               )}
